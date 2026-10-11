@@ -17,8 +17,8 @@ export default function NameDetail() {
   if (error) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16 text-center">
-        <h1 className="text-2xl font-bold mb-4" style={{ color: 'var(--doaide-text)' }}>Name Not Found</h1>
-        <p style={{ color: 'var(--doaide-text-secondary)' }}>{error}</p>
+        <h1 className="text-2xl font-bold mb-4" style={{ color: 'var(--da-text)' }}>Name Not Found</h1>
+        <p style={{ color: 'var(--da-text-secondary)' }}>{error}</p>
       </div>
     )
   }
@@ -26,17 +26,17 @@ export default function NameDetail() {
   if (!data) {
     return (
       <div className="text-center py-16">
-        <p style={{ color: 'var(--doaide-text-muted)' }}>Loading...</p>
+        <p style={{ color: 'var(--da-text-muted)' }}>Loading...</p>
       </div>
     )
   }
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>
-        <span style={{ color: 'var(--doaide-gold)' }}>{data.name}</span> — Business Name Details
+      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>
+        <span style={{ color: 'var(--da-teal)' }}>{data.name}</span> — Business Name Details
       </h1>
-      <p className="mb-8 text-sm" style={{ color: 'var(--doaide-text-muted)' }}>
+      <p className="mb-8 text-sm" style={{ color: 'var(--da-text-muted)' }}>
         Domain availability, social handles, and name scoring for "{data.name}".
       </p>
       <NameCard name={data} />

@@ -38,8 +38,8 @@ export default function DomainChecker() {
 
   return (
     <PublicLayout title="Free Domain Availability Checker" jsonLd={jsonLd}>
-      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>Domain Availability Checker</h1>
-      <p className="mb-6" style={{ color: 'var(--doaide-text-muted)' }}>
+      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>Domain Availability Checker</h1>
+      <p className="mb-6" style={{ color: 'var(--da-text-muted)' }}>
         Check if .com, .in, and .co.in domains are available for your business name. Free, no login required.
       </p>
 
@@ -49,36 +49,36 @@ export default function DomainChecker() {
           onChange={e => setName(e.target.value)}
           placeholder="Enter your business name (e.g., mybusiness)"
           className="flex-1 rounded-lg px-4 py-2.5 text-sm border-0 outline-none focus:ring-2"
-          style={{ background: 'var(--doaide-surface)', color: 'var(--doaide-text)', '--tw-ring-color': 'var(--doaide-gold-dim)' }}
+          style={{ background: 'var(--da-surface)', color: 'var(--da-text)', '--tw-ring-color': 'var(--da-teal-dim)' }}
         />
         <button
           type="submit"
           disabled={!name.trim() || checking}
           className="rounded-lg px-6 py-2.5 font-medium cursor-pointer border-0 disabled:opacity-40"
-          style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+          style={{ background: 'var(--da-teal)', color: 'var(--da-text-on-teal)' }}
         >
           {checking ? 'Checking...' : 'Check Availability'}
         </button>
       </form>
 
       {error && (
-        <div className="rounded-lg px-4 py-3 mb-6 text-sm" style={{ background: 'rgba(248,113,113,0.1)', color: 'var(--doaide-error)', border: '1px solid rgba(248,113,113,0.2)' }}>
+        <div className="rounded-lg px-4 py-3 mb-6 text-sm" style={{ background: 'rgba(248,113,113,0.1)', color: 'var(--da-error)', border: '1px solid rgba(248,113,113,0.2)' }}>
           {error}
         </div>
       )}
 
       {results && (
         <div className="space-y-3">
-          <h3 className="text-sm font-semibold mb-2" style={{ color: 'var(--doaide-text-muted)' }}>Results</h3>
+          <h3 className="text-sm font-semibold mb-2" style={{ color: 'var(--da-text-muted)' }}>Results</h3>
           <div className="grid grid-cols-1 gap-2">
             {results.map(r => (
-              <div key={r.domain} className="rounded-xl p-4 flex items-center justify-between" style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}>
-                <span className="font-semibold" style={{ color: 'var(--doaide-text)' }}>{r.domain}</span>
+              <div key={r.domain} className="rounded-xl p-4 flex items-center justify-between" style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}>
+                <span className="font-semibold" style={{ color: 'var(--da-text)' }}>{r.domain}</span>
                 <span className="rounded-full px-3 py-1 text-xs font-semibold" style={{
                   background: r.available === null ? 'rgba(156,163,175,0.15)' :
                     r.available ? 'rgba(52,211,153,0.15)' : 'rgba(248,113,113,0.15)',
-                  color: r.available === null ? 'var(--doaide-text-muted)' :
-                    r.available ? 'var(--doaide-success)' : 'var(--doaide-error)',
+                  color: r.available === null ? 'var(--da-text-muted)' :
+                    r.available ? 'var(--da-success)' : 'var(--da-error)',
                 }}>
                   {r.available === null ? 'Unknown' : r.available ? 'Likely Available' : 'Likely Taken'}
                 </span>
@@ -86,14 +86,14 @@ export default function DomainChecker() {
             ))}
           </div>
 
-          <p className="text-xs mt-4" style={{ color: 'var(--doaide-text-muted)' }}>
+          <p className="text-xs mt-4" style={{ color: 'var(--da-text-muted)' }}>
             Availability is checked via DNS lookup. For confirmed availability, verify with a domain registrar before purchasing.
           </p>
         </div>
       )}
 
       <div className="mt-8">
-        <ShareButtons url="https://bizname.doaide.com/tools/domain-checker" title="Free Domain Availability Checker by BizNameAI" />
+        <ShareButtons url="https://bizname.doaide.com/tools/domain-checker" title="Free Domain Availability Checker by DoAide BizName" />
       </div>
     </PublicLayout>
   )

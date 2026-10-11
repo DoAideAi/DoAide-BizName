@@ -25,21 +25,21 @@ function ClassCard({ cls, onToggle, selected }) {
     <div
       className="rounded-xl p-5 transition-colors"
       style={{
-        background: 'var(--doaide-surface)',
+        background: 'var(--da-surface)',
         border: selected
-          ? '2px solid var(--doaide-gold)'
-          : '1px solid var(--doaide-border)',
+          ? '2px solid var(--da-teal)'
+          : '1px solid var(--da-border)',
       }}
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex items-center gap-3">
           <span
             className="inline-flex items-center justify-center w-10 h-10 rounded-lg text-sm font-bold shrink-0"
-            style={{ background: 'var(--doaide-gold-bg)', color: 'var(--doaide-gold)' }}
+            style={{ background: 'var(--da-teal-bg)', color: 'var(--da-teal)' }}
           >
             {cls.number}
           </span>
-          <h3 className="text-base font-semibold" style={{ color: 'var(--doaide-text)' }}>
+          <h3 className="text-base font-semibold" style={{ color: 'var(--da-text)' }}>
             {cls.title}
           </h3>
         </div>
@@ -47,20 +47,20 @@ function ClassCard({ cls, onToggle, selected }) {
           onClick={() => onToggle(cls.number)}
           className="shrink-0 rounded-lg px-3 py-1.5 text-xs font-medium cursor-pointer border-0 transition-colors"
           style={{
-            background: selected ? 'var(--doaide-gold)' : 'var(--doaide-gold-bg)',
-            color: selected ? 'var(--doaide-text-on-gold)' : 'var(--doaide-gold)',
+            background: selected ? 'var(--da-teal)' : 'var(--da-teal-bg)',
+            color: selected ? 'var(--da-text-on-teal)' : 'var(--da-teal)',
           }}
         >
           {selected ? 'Selected' : 'Select'}
         </button>
       </div>
 
-      <p className="text-sm mb-3 leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>
+      <p className="text-sm mb-3 leading-relaxed" style={{ color: 'var(--da-text-secondary)' }}>
         {cls.description}
       </p>
 
       <div className="mb-3">
-        <span className="text-xs font-medium" style={{ color: 'var(--doaide-text-muted)' }}>
+        <span className="text-xs font-medium" style={{ color: 'var(--da-text-muted)' }}>
           Examples:
         </span>
         <div className="flex flex-wrap gap-1.5 mt-1">
@@ -68,7 +68,7 @@ function ClassCard({ cls, onToggle, selected }) {
             <span
               key={ex}
               className="text-xs px-2 py-0.5 rounded-md"
-              style={{ background: 'var(--doaide-bg)', color: 'var(--doaide-text-secondary)' }}
+              style={{ background: 'var(--da-bg)', color: 'var(--da-text-secondary)' }}
             >
               {ex}
             </span>
@@ -77,8 +77,8 @@ function ClassCard({ cls, onToggle, selected }) {
       </div>
 
       {relatedNames.length > 0 && (
-        <div className="pt-3" style={{ borderTop: '1px solid var(--doaide-border)' }}>
-          <span className="text-xs font-medium" style={{ color: 'var(--doaide-text-muted)' }}>
+        <div className="pt-3" style={{ borderTop: '1px solid var(--da-border)' }}>
+          <span className="text-xs font-medium" style={{ color: 'var(--da-text-muted)' }}>
             Similar classes:
           </span>
           <div className="flex flex-wrap gap-1.5 mt-1">
@@ -86,7 +86,7 @@ function ClassCard({ cls, onToggle, selected }) {
               <span
                 key={r.number}
                 className="text-xs px-2 py-0.5 rounded-md"
-                style={{ background: 'var(--doaide-gold-bg)', color: 'var(--doaide-gold)' }}
+                style={{ background: 'var(--da-teal-bg)', color: 'var(--da-teal)' }}
               >
                 Class {r.number} — {r.title}
               </span>
@@ -105,36 +105,36 @@ function CostEstimator({ count }) {
   return (
     <div
       className="rounded-xl p-5 mb-6"
-      style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-gold-dim)' }}
+      style={{ background: 'var(--da-surface)', border: '1px solid var(--da-teal-dim)' }}
     >
-      <h3 className="text-base font-semibold mb-3" style={{ color: 'var(--doaide-gold)' }}>
+      <h3 className="text-base font-semibold mb-3" style={{ color: 'var(--da-teal)' }}>
         Estimated Filing Cost
       </h3>
       <div className="grid gap-3 sm:grid-cols-2">
-        <div className="rounded-lg p-4" style={{ background: 'var(--doaide-bg)' }}>
-          <p className="text-xs mb-1" style={{ color: 'var(--doaide-text-muted)' }}>
+        <div className="rounded-lg p-4" style={{ background: 'var(--da-bg)' }}>
+          <p className="text-xs mb-1" style={{ color: 'var(--da-text-muted)' }}>
             Individuals / Startups / Small Enterprises
           </p>
-          <p className="text-xs mb-1" style={{ color: 'var(--doaide-text-secondary)' }}>
+          <p className="text-xs mb-1" style={{ color: 'var(--da-text-secondary)' }}>
             {count} class{count > 1 ? 'es' : ''} x ₹{individualFee.toLocaleString('en-IN')}
           </p>
-          <p className="text-xl font-bold" style={{ color: 'var(--doaide-success)' }}>
+          <p className="text-xl font-bold" style={{ color: 'var(--da-success)' }}>
             ₹{(count * individualFee).toLocaleString('en-IN')}
           </p>
         </div>
-        <div className="rounded-lg p-4" style={{ background: 'var(--doaide-bg)' }}>
-          <p className="text-xs mb-1" style={{ color: 'var(--doaide-text-muted)' }}>
+        <div className="rounded-lg p-4" style={{ background: 'var(--da-bg)' }}>
+          <p className="text-xs mb-1" style={{ color: 'var(--da-text-muted)' }}>
             Others (Companies / LLPs)
           </p>
-          <p className="text-xs mb-1" style={{ color: 'var(--doaide-text-secondary)' }}>
+          <p className="text-xs mb-1" style={{ color: 'var(--da-text-secondary)' }}>
             {count} class{count > 1 ? 'es' : ''} x ₹{othersFee.toLocaleString('en-IN')}
           </p>
-          <p className="text-xl font-bold" style={{ color: 'var(--doaide-gold)' }}>
+          <p className="text-xl font-bold" style={{ color: 'var(--da-teal)' }}>
             ₹{(count * othersFee).toLocaleString('en-IN')}
           </p>
         </div>
       </div>
-      <p className="text-xs mt-3" style={{ color: 'var(--doaide-text-muted)' }}>
+      <p className="text-xs mt-3" style={{ color: 'var(--da-text-muted)' }}>
         * Government fees only. Attorney fees and professional charges are additional. Fees as per Indian Trademark Rules, 2017.
       </p>
     </div>
@@ -245,10 +245,10 @@ export default function TrademarkClassFinder() {
   return (
     <PublicLayout title="Free Trademark Class Finder — India" jsonLd={jsonLd}>
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>
+        <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>
           Trademark Class Finder
         </h1>
-        <p className="mb-6" style={{ color: 'var(--doaide-text-muted)' }}>
+        <p className="mb-6" style={{ color: 'var(--da-text-muted)' }}>
           Find the right Nice Classification class for your trademark in India.
           Enter your business description or browse popular categories.
         </p>
@@ -261,17 +261,17 @@ export default function TrademarkClassFinder() {
             placeholder="Describe your product or service (e.g., mobile app, restaurant, clothing brand)..."
             className="w-full rounded-xl px-5 py-3.5 text-sm border-0 outline-none focus:ring-2"
             style={{
-              background: 'var(--doaide-surface)',
-              color: 'var(--doaide-text)',
-              '--tw-ring-color': 'var(--doaide-gold-dim)',
-              border: '1px solid var(--doaide-border)',
+              background: 'var(--da-surface)',
+              color: 'var(--da-text)',
+              '--tw-ring-color': 'var(--da-teal-dim)',
+              border: '1px solid var(--da-border)',
             }}
           />
         </div>
 
         {/* Popular Categories */}
         <div className="mb-6">
-          <span className="text-xs uppercase tracking-widest mb-2 block" style={{ color: 'var(--doaide-text-muted)' }}>
+          <span className="text-xs uppercase tracking-widest mb-2 block" style={{ color: 'var(--da-text-muted)' }}>
             Popular Categories
           </span>
           <div className="flex flex-wrap gap-2">
@@ -281,9 +281,9 @@ export default function TrademarkClassFinder() {
                 onClick={() => handleCategoryClick(cat)}
                 className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium cursor-pointer border-0 transition-colors"
                 style={{
-                  background: activeCategory?.label === cat.label ? 'var(--doaide-gold)' : 'var(--doaide-surface)',
-                  color: activeCategory?.label === cat.label ? 'var(--doaide-text-on-gold)' : 'var(--doaide-text-secondary)',
-                  border: `1px solid ${activeCategory?.label === cat.label ? 'var(--doaide-gold)' : 'var(--doaide-border)'}`,
+                  background: activeCategory?.label === cat.label ? 'var(--da-teal)' : 'var(--da-surface)',
+                  color: activeCategory?.label === cat.label ? 'var(--da-text-on-teal)' : 'var(--da-text-secondary)',
+                  border: `1px solid ${activeCategory?.label === cat.label ? 'var(--da-teal)' : 'var(--da-border)'}`,
                 }}
               >
                 <span>{cat.icon}</span>
@@ -299,8 +299,8 @@ export default function TrademarkClassFinder() {
         {/* Results */}
         {results.length > 0 && (
           <div className="mb-2">
-            <p className="text-sm mb-4" style={{ color: 'var(--doaide-text-secondary)' }}>
-              Found <strong style={{ color: 'var(--doaide-gold)' }}>{results.length}</strong> matching
+            <p className="text-sm mb-4" style={{ color: 'var(--da-text-secondary)' }}>
+              Found <strong style={{ color: 'var(--da-teal)' }}>{results.length}</strong> matching
               class{results.length !== 1 ? 'es' : ''}
               {activeCategory ? ` for ${activeCategory.label}` : ''}
             </p>
@@ -321,9 +321,9 @@ export default function TrademarkClassFinder() {
         {query.trim() && results.length === 0 && (
           <div
             className="rounded-xl p-8 text-center mb-6"
-            style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+            style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
           >
-            <p className="text-sm" style={{ color: 'var(--doaide-text-muted)' }}>
+            <p className="text-sm" style={{ color: 'var(--da-text-muted)' }}>
               No matching classes found. Try different keywords or browse the categories above.
             </p>
           </div>
@@ -333,12 +333,12 @@ export default function TrademarkClassFinder() {
         {!query.trim() && !activeCategory && (
           <div
             className="rounded-xl p-8 text-center mb-6"
-            style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+            style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
           >
-            <p className="text-lg mb-2" style={{ color: 'var(--doaide-text)' }}>
+            <p className="text-lg mb-2" style={{ color: 'var(--da-text)' }}>
               Search or pick a category to get started
             </p>
-            <p className="text-sm" style={{ color: 'var(--doaide-text-muted)' }}>
+            <p className="text-sm" style={{ color: 'var(--da-text-muted)' }}>
               All 45 Nice Classification classes with examples, related classes, and government fee info.
             </p>
           </div>
@@ -364,39 +364,39 @@ export default function TrademarkClassFinder() {
         {/* Fee Info Section */}
         <div
           className="rounded-xl p-6 mb-8"
-          style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+          style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
         >
-          <h2 className="text-lg font-semibold mb-3" style={{ color: 'var(--doaide-text)' }}>
+          <h2 className="text-lg font-semibold mb-3" style={{ color: 'var(--da-text)' }}>
             Trademark Registration Fees in India
           </h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+            <table className="w-full text-sm" style={{ color: 'var(--da-text-secondary)' }}>
               <thead>
-                <tr style={{ borderBottom: '1px solid var(--doaide-border)' }}>
-                  <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--doaide-text)' }}>Applicant Type</th>
-                  <th className="text-right py-2 font-medium" style={{ color: 'var(--doaide-text)' }}>Fee per Class</th>
+                <tr style={{ borderBottom: '1px solid var(--da-border)' }}>
+                  <th className="text-left py-2 pr-4 font-medium" style={{ color: 'var(--da-text)' }}>Applicant Type</th>
+                  <th className="text-right py-2 font-medium" style={{ color: 'var(--da-text)' }}>Fee per Class</th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ borderBottom: '1px solid var(--doaide-border)' }}>
+                <tr style={{ borderBottom: '1px solid var(--da-border)' }}>
                   <td className="py-2 pr-4">Individuals / Startups / Small Enterprises</td>
-                  <td className="text-right py-2 font-semibold" style={{ color: 'var(--doaide-success)' }}>₹4,500</td>
+                  <td className="text-right py-2 font-semibold" style={{ color: 'var(--da-success)' }}>₹4,500</td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4">Others (Companies / LLPs / Large Enterprises)</td>
-                  <td className="text-right py-2 font-semibold" style={{ color: 'var(--doaide-gold)' }}>₹9,000</td>
+                  <td className="text-right py-2 font-semibold" style={{ color: 'var(--da-teal)' }}>₹9,000</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-xs mt-3" style={{ color: 'var(--doaide-text-muted)' }}>
+          <p className="text-xs mt-3" style={{ color: 'var(--da-text-muted)' }}>
             Fees are for online filing via the IP India portal. Physical filing costs double. Attorney/professional fees are additional.
           </p>
         </div>
 
         {/* FAQ */}
         <section className="mb-8">
-          <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--doaide-text)' }}>
+          <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--da-text)' }}>
             Frequently Asked Questions
           </h2>
           <div className="space-y-3">
@@ -404,16 +404,16 @@ export default function TrademarkClassFinder() {
               <details
                 key={i}
                 className="rounded-xl group"
-                style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+                style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
               >
                 <summary
                   className="px-5 py-4 cursor-pointer font-medium text-sm list-none flex items-center justify-between"
-                  style={{ color: 'var(--doaide-text)' }}
+                  style={{ color: 'var(--da-text)' }}
                 >
                   {item.q}
-                  <span className="ml-2 transition-transform group-open:rotate-45" style={{ color: 'var(--doaide-gold)' }}>+</span>
+                  <span className="ml-2 transition-transform group-open:rotate-45" style={{ color: 'var(--da-teal)' }}>+</span>
                 </summary>
-                <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>
+                <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--da-text-secondary)' }}>
                   {item.a}
                 </p>
               </details>

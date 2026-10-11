@@ -83,40 +83,40 @@ export default function TaglineGenerator() {
 
   return (
     <PublicLayout title="Free Tagline Generator" jsonLd={jsonLd}>
-      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>Tagline Generator</h1>
-      <p className="mb-6" style={{ color: 'var(--doaide-text-muted)' }}>Generate creative tagline suggestions based on your business type, values, and tone.</p>
+      <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>Tagline Generator</h1>
+      <p className="mb-6" style={{ color: 'var(--da-text-muted)' }}>Generate creative tagline suggestions based on your business type, values, and tone.</p>
 
       <form onSubmit={handleGenerate} className="space-y-4 mb-6">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--doaide-text-muted)' }}>Business Type</label>
+            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--da-text-muted)' }}>Business Type</label>
             <select
               value={type}
               onChange={e => setType(e.target.value)}
               className="w-full rounded-lg px-3 py-2.5 text-sm border-0 outline-none"
-              style={{ background: 'var(--doaide-surface)', color: 'var(--doaide-text)' }}
+              style={{ background: 'var(--da-surface)', color: 'var(--da-text)' }}
             >
               {BUSINESS_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--doaide-text-muted)' }}>Core Values (comma-separated)</label>
+            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--da-text-muted)' }}>Core Values (comma-separated)</label>
             <input
               value={values}
               onChange={e => setValues(e.target.value)}
               placeholder="Innovation, Trust, Quality"
               required
               className="w-full rounded-lg px-3 py-2.5 text-sm border-0 outline-none focus:ring-2"
-              style={{ background: 'var(--doaide-surface)', color: 'var(--doaide-text)', '--tw-ring-color': 'var(--doaide-gold-dim)' }}
+              style={{ background: 'var(--da-surface)', color: 'var(--da-text)', '--tw-ring-color': 'var(--da-teal-dim)' }}
             />
           </div>
           <div>
-            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--doaide-text-muted)' }}>Tone</label>
+            <label className="block text-xs uppercase tracking-wider mb-1.5" style={{ color: 'var(--da-text-muted)' }}>Tone</label>
             <select
               value={tone}
               onChange={e => setTone(e.target.value)}
               className="w-full rounded-lg px-3 py-2.5 text-sm border-0 outline-none"
-              style={{ background: 'var(--doaide-surface)', color: 'var(--doaide-text)' }}
+              style={{ background: 'var(--da-surface)', color: 'var(--da-text)' }}
             >
               {TONES.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
@@ -125,7 +125,7 @@ export default function TaglineGenerator() {
         <button
           type="submit"
           className="rounded-lg px-6 py-2.5 font-medium cursor-pointer border-0"
-          style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+          style={{ background: 'var(--da-teal)', color: 'var(--da-text-on-teal)' }}
         >
           Generate Taglines
         </button>
@@ -134,12 +134,12 @@ export default function TaglineGenerator() {
       {taglines.length > 0 && (
         <div className="space-y-2">
           {taglines.map((tl, i) => (
-            <div key={i} className="flex items-center justify-between rounded-lg p-3" style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}>
-              <span className="text-sm" style={{ color: 'var(--doaide-text)' }}>{tl}</span>
+            <div key={i} className="flex items-center justify-between rounded-lg p-3" style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}>
+              <span className="text-sm" style={{ color: 'var(--da-text)' }}>{tl}</span>
               <button
                 onClick={() => copyTagline(tl, i)}
                 className="text-xs px-3 py-1 rounded-lg cursor-pointer border-0 shrink-0 ml-3"
-                style={{ background: 'var(--doaide-gold-bg)', color: 'var(--doaide-gold)' }}
+                style={{ background: 'var(--da-teal-bg)', color: 'var(--da-teal)' }}
               >
                 {copiedIdx === i ? 'Copied!' : 'Copy'}
               </button>
@@ -149,7 +149,7 @@ export default function TaglineGenerator() {
       )}
 
       <div className="mt-8">
-        <ShareButtons url="https://bizname.doaide.com/tools/tagline-generator" title="Free Tagline Generator by BizNameAI" />
+        <ShareButtons url="https://bizname.doaide.com/tools/tagline-generator" title="Free Tagline Generator by DoAide BizName" />
       </div>
     </PublicLayout>
   )

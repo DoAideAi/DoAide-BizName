@@ -28,8 +28,8 @@ export default function ToolsIndex() {
   return (
     <PublicLayout title="Free Tools" jsonLd={jsonLd}>
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>Free Business Naming Tools</h1>
-        <p className="text-sm mb-8" style={{ color: 'var(--doaide-text-muted)' }}>Everything you need to name, brand, and launch your business.</p>
+        <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>Free Business Naming Tools</h1>
+        <p className="text-sm mb-8" style={{ color: 'var(--da-text-muted)' }}>Everything you need to name, brand, and launch your business.</p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {TOOLS.map((t) => (
@@ -37,21 +37,21 @@ export default function ToolsIndex() {
               key={t.slug}
               to={`/tools/${t.slug}`}
               className="rounded-xl p-5 no-underline transition-colors block"
-              style={{ border: '1px solid var(--doaide-border)', background: 'var(--doaide-surface)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--doaide-gold)')}
-              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--doaide-border)')}
+              style={{ border: '1px solid var(--da-border)', background: 'var(--da-surface)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--da-teal)')}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--da-border)')}
             >
               <div className="text-2xl mb-3">{t.icon}</div>
-              <h2 className="text-base font-semibold mb-1" style={{ color: 'var(--doaide-text)' }}>{t.title}</h2>
-              <p className="text-xs" style={{ color: 'var(--doaide-text-muted)' }}>{t.description}</p>
+              <h2 className="text-base font-semibold mb-1" style={{ color: 'var(--da-text)' }}>{t.title}</h2>
+              <p className="text-xs" style={{ color: 'var(--da-text-muted)' }}>{t.description}</p>
             </Link>
           ))}
         </div>
 
-        <h2 className="text-xl font-bold mt-12 mb-4" style={{ color: 'var(--doaide-text)' }}>
-          Industry-Specific <span style={{ color: 'var(--doaide-gold)' }}>Name Generators</span>
+        <h2 className="text-xl font-bold mt-12 mb-4" style={{ color: 'var(--da-text)' }}>
+          Industry-Specific <span style={{ color: 'var(--da-teal)' }}>Name Generators</span>
         </h2>
-        <p className="text-sm mb-6" style={{ color: 'var(--doaide-text-muted)' }}>
+        <p className="text-sm mb-6" style={{ color: 'var(--da-text-muted)' }}>
           AI-powered name generators tailored for specific industries with curated prompts and styles.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -60,12 +60,12 @@ export default function ToolsIndex() {
               key={g.slug}
               to={`/industry/${g.slug}`}
               className="rounded-xl p-5 text-center no-underline transition-colors block"
-              style={{ border: '1px solid var(--doaide-border)', background: 'var(--doaide-surface)' }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--doaide-gold)')}
-              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--doaide-border)')}
+              style={{ border: '1px solid var(--da-border)', background: 'var(--da-surface)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--da-teal)')}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--da-border)')}
             >
               <div className="text-3xl mb-2">{g.icon}</div>
-              <div className="text-sm font-semibold" style={{ color: 'var(--doaide-text)' }}>{g.label}</div>
+              <div className="text-sm font-semibold" style={{ color: 'var(--da-text)' }}>{g.label}</div>
             </Link>
           ))}
         </div>

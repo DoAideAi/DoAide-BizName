@@ -29,7 +29,8 @@ export default function FeedbackWidget() {
       <button
         onClick={() => setOpen(true)}
         aria-label="Send feedback"
-        className="fixed bottom-4 left-4 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-colors"
+        className="fixed bottom-4 left-4 z-50 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-colors"
+        style={{ background: 'var(--da-teal)' }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -49,7 +50,7 @@ export default function FeedbackWidget() {
             </div>
 
             {status === 'sent' ? (
-              <p className="text-green-600 text-center py-8 font-medium">Thanks for your feedback!</p>
+              <p className="text-center py-8 font-medium" style={{ color: 'var(--da-success)' }}>Thanks for your feedback!</p>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="flex gap-2 mb-4">
@@ -58,9 +59,11 @@ export default function FeedbackWidget() {
                       key={t}
                       type="button"
                       onClick={() => setType(t)}
-                      className={`px-3 py-1.5 rounded-full text-sm font-medium capitalize transition-colors ${
-                        type === t ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                      }`}
+                      className="px-3 py-1.5 rounded-full text-sm font-medium capitalize transition-colors"
+                      style={{
+                        background: type === t ? 'var(--da-teal)' : 'var(--da-surface)',
+                        color: type === t ? 'var(--da-text-on-teal)' : 'var(--da-text-secondary)',
+                      }}
                     >
                       {t}
                     </button>
@@ -71,16 +74,18 @@ export default function FeedbackWidget() {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Tell us what you think..."
                   rows={4}
-                  className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none resize-none"
+                  className="w-full rounded-lg p-3 text-sm outline-none resize-none"
+                  style={{ border: '1px solid var(--da-border)', background: 'var(--da-bg)' }}
                   required
                 />
                 {status === 'error' && (
-                  <p className="text-red-500 text-sm mt-1">Something went wrong. Please try again.</p>
+                  <p className="text-sm mt-1" style={{ color: 'var(--da-error)' }}>Something went wrong. Please try again.</p>
                 )}
                 <button
                   type="submit"
                   disabled={status === 'sending' || !message.trim()}
-                  className="mt-3 w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium py-2.5 rounded-lg transition-colors"
+                  className="mt-3 w-full text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-50"
+                  style={{ background: 'var(--da-teal)' }}
                 >
                   {status === 'sending' ? 'Sending...' : 'Submit'}
                 </button>

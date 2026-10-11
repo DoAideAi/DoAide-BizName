@@ -49,8 +49,8 @@ export default function IndustryGenerator({ user }) {
     return (
       <PublicLayout title="Industry Not Found">
         <div className="text-center py-20">
-          <h1 className="text-2xl font-bold mb-4" style={{ color: 'var(--doaide-text)' }}>Industry not found</h1>
-          <Link to="/" style={{ color: 'var(--doaide-gold)' }}>Go to name generator</Link>
+          <h1 className="text-2xl font-bold mb-4" style={{ color: 'var(--da-text)' }}>Industry not found</h1>
+          <Link to="/" style={{ color: 'var(--da-teal)' }}>Go to name generator</Link>
         </div>
       </PublicLayout>
     )
@@ -92,27 +92,27 @@ export default function IndustryGenerator({ user }) {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <div className="text-4xl mb-3">{config.icon}</div>
-          <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>
-            {config.label} <span style={{ color: 'var(--doaide-gold)' }}>Name Generator</span>
+          <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>
+            {config.label} <span style={{ color: 'var(--da-teal)' }}>Name Generator</span>
           </h1>
-          <p className="text-sm max-w-xl mx-auto" style={{ color: 'var(--doaide-text-muted)' }}>{config.description}</p>
+          <p className="text-sm max-w-xl mx-auto" style={{ color: 'var(--da-text-muted)' }}>{config.description}</p>
         </div>
 
         <form onSubmit={handleGenerate} className="max-w-xl mx-auto mb-8">
-          <div className="flex items-center rounded-xl overflow-hidden" style={{ background: 'var(--doaide-surface)', border: '2px solid var(--doaide-border)', boxShadow: 'var(--doaide-shadow-gold)' }}>
+          <div className="flex items-center rounded-xl overflow-hidden" style={{ background: 'var(--da-surface)', border: '2px solid var(--da-border)', boxShadow: 'var(--da-shadow-teal)' }}>
             <input
               type="text"
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               placeholder={`Enter a keyword (e.g., ${config.keywords.slice(0, 3).join(', ')})...`}
               className="flex-1 px-5 py-4 text-lg outline-none"
-              style={{ background: 'transparent', color: 'var(--doaide-text)', border: 'none' }}
+              style={{ background: 'transparent', color: 'var(--da-text)', border: 'none' }}
             />
             <button
               type="submit"
               disabled={loading}
               className="px-6 py-4 font-semibold cursor-pointer transition-colors"
-              style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)', border: 'none', opacity: loading ? 0.6 : 1 }}
+              style={{ background: 'var(--da-teal)', color: 'var(--da-text-on-teal)', border: 'none', opacity: loading ? 0.6 : 1 }}
             >
               {loading ? 'Generating...' : 'Generate'}
             </button>
@@ -125,9 +125,9 @@ export default function IndustryGenerator({ user }) {
                 onClick={() => setStyle(s)}
                 className="px-3 py-1.5 rounded-lg text-xs font-medium cursor-pointer border-0"
                 style={{
-                  background: style === s ? 'var(--doaide-gold)' : 'var(--doaide-surface)',
-                  color: style === s ? 'var(--doaide-text-on-gold)' : 'var(--doaide-text-secondary)',
-                  border: `1px solid ${style === s ? 'var(--doaide-gold)' : 'var(--doaide-border)'}`,
+                  background: style === s ? 'var(--da-teal)' : 'var(--da-surface)',
+                  color: style === s ? 'var(--da-text-on-teal)' : 'var(--da-text-secondary)',
+                  border: `1px solid ${style === s ? 'var(--da-teal)' : 'var(--da-border)'}`,
                 }}
               >
                 {s.charAt(0).toUpperCase() + s.slice(1)}
@@ -137,13 +137,13 @@ export default function IndustryGenerator({ user }) {
         </form>
 
         <div className="flex flex-wrap gap-2 justify-center mb-8">
-          <span className="text-xs" style={{ color: 'var(--doaide-text-muted)' }}>Quick ideas:</span>
+          <span className="text-xs" style={{ color: 'var(--da-text-muted)' }}>Quick ideas:</span>
           {config.keywords.map(kw => (
             <button
               key={kw}
               onClick={() => setKeyword(kw)}
               className="text-xs px-2.5 py-1 rounded-lg cursor-pointer border-0"
-              style={{ background: 'var(--doaide-surface)', color: 'var(--doaide-text-secondary)', border: '1px solid var(--doaide-border)' }}
+              style={{ background: 'var(--da-surface)', color: 'var(--da-text-secondary)', border: '1px solid var(--da-border)' }}
             >
               {kw}
             </button>
@@ -151,22 +151,22 @@ export default function IndustryGenerator({ user }) {
         </div>
 
         {error && (
-          <div className="rounded-lg px-4 py-3 mb-6 text-sm" style={{ background: 'rgba(248,113,113,0.1)', color: 'var(--doaide-error)', border: '1px solid rgba(248,113,113,0.2)' }}>
+          <div className="rounded-lg px-4 py-3 mb-6 text-sm" style={{ background: 'rgba(248,113,113,0.1)', color: 'var(--da-error)', border: '1px solid rgba(248,113,113,0.2)' }}>
             {error}
           </div>
         )}
 
         {loading && (
           <div className="text-center py-12">
-            <div className="inline-block w-8 h-8 border-2 rounded-full animate-spin" style={{ borderColor: 'var(--doaide-border)', borderTopColor: 'var(--doaide-gold)' }} />
-            <p className="mt-4 text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>Generating {config.label.toLowerCase()} names...</p>
+            <div className="inline-block w-8 h-8 border-2 rounded-full animate-spin" style={{ borderColor: 'var(--da-border)', borderTopColor: 'var(--da-teal)' }} />
+            <p className="mt-4 text-sm" style={{ color: 'var(--da-text-secondary)' }}>Generating {config.label.toLowerCase()} names...</p>
           </div>
         )}
 
         {results && !loading && (
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--doaide-text)' }}>
-              {config.label} Names for "<span style={{ color: 'var(--doaide-gold)' }}>{results.keyword}</span>"
+            <h2 className="text-xl font-bold mb-4" style={{ color: 'var(--da-text)' }}>
+              {config.label} Names for "<span style={{ color: 'var(--da-teal)' }}>{results.keyword}</span>"
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {results.names.map(name => (
@@ -177,12 +177,12 @@ export default function IndustryGenerator({ user }) {
         )}
 
         <div className="mt-8">
-          <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--doaide-text)' }}>Other Industry Generators</h3>
+          <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--da-text)' }}>Other Industry Generators</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {Object.entries(INDUSTRIES).filter(([k]) => k !== slug).map(([k, v]) => (
-              <Link key={k} to={`/industry/${k}`} className="rounded-xl p-4 text-center no-underline" style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}>
+              <Link key={k} to={`/industry/${k}`} className="rounded-xl p-4 text-center no-underline" style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}>
                 <div className="text-2xl mb-1">{v.icon}</div>
-                <div className="text-xs font-medium" style={{ color: 'var(--doaide-text)' }}>{v.label}</div>
+                <div className="text-xs font-medium" style={{ color: 'var(--da-text)' }}>{v.label}</div>
               </Link>
             ))}
           </div>

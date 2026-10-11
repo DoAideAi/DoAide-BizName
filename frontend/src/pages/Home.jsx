@@ -51,12 +51,12 @@ export default function Home({ user }) {
       <section className="text-center py-16 md:py-24">
         <h1
           className="text-4xl md:text-6xl font-bold mb-4 leading-tight"
-          style={{ fontFamily: 'var(--doaide-font-display)', color: 'var(--doaide-text)' }}
+          style={{ fontFamily: 'var(--da-font-display)', color: 'var(--da-text)' }}
         >
           Find the Perfect Name<br />
-          <span style={{ color: 'var(--doaide-gold)' }}>for Your Business</span>
+          <span style={{ color: 'var(--da-teal)' }}>for Your Business</span>
         </h1>
-        <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: 'var(--doaide-text-secondary)' }}>
+        <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: 'var(--da-text-secondary)' }}>
           AI-powered name generator with instant domain availability, social handle checks,
           and name scoring. Free to use, no sign-up required.
         </p>
@@ -65,9 +65,9 @@ export default function Home({ user }) {
           <div
             className="flex items-center rounded-xl overflow-hidden"
             style={{
-              background: 'var(--doaide-surface)',
-              border: '2px solid var(--doaide-border)',
-              boxShadow: 'var(--doaide-shadow-gold)',
+              background: 'var(--da-surface)',
+              border: '2px solid var(--da-border)',
+              boxShadow: 'var(--da-shadow-teal)',
             }}
           >
             <input
@@ -78,9 +78,9 @@ export default function Home({ user }) {
               className="flex-1 px-5 py-4 text-lg outline-none"
               style={{
                 background: 'transparent',
-                color: 'var(--doaide-text)',
+                color: 'var(--da-text)',
                 border: 'none',
-                fontFamily: 'var(--doaide-font)',
+                fontFamily: 'var(--da-font)',
               }}
             />
             <button
@@ -88,8 +88,8 @@ export default function Home({ user }) {
               disabled={loading || !keyword.trim()}
               className="px-6 py-4 text-lg font-semibold cursor-pointer transition-colors"
               style={{
-                background: 'var(--doaide-gold)',
-                color: 'var(--doaide-text-on-gold)',
+                background: 'var(--da-teal)',
+                color: 'var(--da-text-on-teal)',
                 border: 'none',
                 opacity: loading || !keyword.trim() ? 0.6 : 1,
               }}
@@ -104,9 +104,9 @@ export default function Home({ user }) {
               onChange={(e) => setIndustry(e.target.value)}
               className="px-3 py-2 rounded-lg text-sm cursor-pointer"
               style={{
-                background: 'var(--doaide-surface)',
-                color: 'var(--doaide-text)',
-                border: '1px solid var(--doaide-border)',
+                background: 'var(--da-surface)',
+                color: 'var(--da-text)',
+                border: '1px solid var(--da-border)',
               }}
             >
               <option value="">Any Industry</option>
@@ -119,9 +119,9 @@ export default function Home({ user }) {
               onChange={(e) => setStyle(e.target.value)}
               className="px-3 py-2 rounded-lg text-sm cursor-pointer"
               style={{
-                background: 'var(--doaide-surface)',
-                color: 'var(--doaide-text)',
-                border: '1px solid var(--doaide-border)',
+                background: 'var(--da-surface)',
+                color: 'var(--da-text)',
+                border: '1px solid var(--da-border)',
               }}
             >
               {STYLES.map((s) => (
@@ -132,7 +132,7 @@ export default function Home({ user }) {
         </form>
 
         {!user && (
-          <p className="text-xs mt-3" style={{ color: 'var(--doaide-text-muted)' }}>
+          <p className="text-xs mt-3" style={{ color: 'var(--da-text-muted)' }}>
             5 free searches per day. <a href="/pricing">Upgrade for unlimited.</a>
           </p>
         )}
@@ -143,7 +143,7 @@ export default function Home({ user }) {
           className="rounded-lg px-4 py-3 mb-6 text-sm"
           style={{
             background: 'rgba(248,113,113,0.1)',
-            color: 'var(--doaide-error)',
+            color: 'var(--da-error)',
             border: '1px solid rgba(248,113,113,0.2)',
           }}
         >
@@ -156,11 +156,11 @@ export default function Home({ user }) {
           <div
             className="inline-block w-8 h-8 border-2 rounded-full animate-spin"
             style={{
-              borderColor: 'var(--doaide-border)',
-              borderTopColor: 'var(--doaide-gold)',
+              borderColor: 'var(--da-border)',
+              borderTopColor: 'var(--da-teal)',
             }}
           />
-          <p className="mt-4 text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+          <p className="mt-4 text-sm" style={{ color: 'var(--da-text-secondary)' }}>
             AI is crafting perfect names for you...
           </p>
         </div>
@@ -168,8 +168,8 @@ export default function Home({ user }) {
 
       {results && !loading && (
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--doaide-text)' }}>
-            Generated Names for "<span style={{ color: 'var(--doaide-gold)' }}>{results.keyword}</span>"
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--da-text)' }}>
+            Generated Names for "<span style={{ color: 'var(--da-teal)' }}>{results.keyword}</span>"
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {results.names.map((name) => (
@@ -190,11 +190,11 @@ export default function Home({ user }) {
             <div
               key={f.title}
               className="rounded-xl p-6 text-center"
-              style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+              style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
             >
               <div className="text-3xl mb-3">{f.icon}</div>
-              <h3 className="font-bold mb-2" style={{ color: 'var(--doaide-text)' }}>{f.title}</h3>
-              <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>{f.desc}</p>
+              <h3 className="font-bold mb-2" style={{ color: 'var(--da-text)' }}>{f.title}</h3>
+              <p className="text-sm" style={{ color: 'var(--da-text-secondary)' }}>{f.desc}</p>
             </div>
           ))}
         </section>
@@ -203,8 +203,8 @@ export default function Home({ user }) {
       {/* Industry Generators */}
       {!results && (
         <section className="mb-16">
-          <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'var(--doaide-text)' }}>
-            Industry-Specific <span style={{ color: 'var(--doaide-gold)' }}>Name Generators</span>
+          <h2 className="text-2xl font-bold text-center mb-6" style={{ color: 'var(--da-text)' }}>
+            Industry-Specific <span style={{ color: 'var(--da-teal)' }}>Name Generators</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
@@ -213,9 +213,9 @@ export default function Home({ user }) {
               { slug: 'fashion', label: 'Fashion', icon: '👗' },
               { slug: 'healthcare', label: 'Healthcare', icon: '🏥' },
             ].map(g => (
-              <Link key={g.slug} to={`/industry/${g.slug}`} className="rounded-xl p-5 text-center no-underline transition-colors" style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}>
+              <Link key={g.slug} to={`/industry/${g.slug}`} className="rounded-xl p-5 text-center no-underline transition-colors" style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}>
                 <div className="text-3xl mb-2">{g.icon}</div>
-                <div className="text-sm font-semibold" style={{ color: 'var(--doaide-text)' }}>{g.label}</div>
+                <div className="text-sm font-semibold" style={{ color: 'var(--da-text)' }}>{g.label}</div>
               </Link>
             ))}
           </div>
@@ -226,40 +226,40 @@ export default function Home({ user }) {
       <section className="mb-16 space-y-3">
         <div
           className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+          style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
         >
           <div>
-            <h3 className="font-bold mb-1" style={{ color: 'var(--doaide-text)' }}>
+            <h3 className="font-bold mb-1" style={{ color: 'var(--da-text)' }}>
               Check Domain Availability
             </h3>
-            <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+            <p className="text-sm" style={{ color: 'var(--da-text-secondary)' }}>
               Free DNS-based checker for .com, .in, and .co.in domains. No login required.
             </p>
           </div>
           <Link
             to="/tools/domain-checker"
             className="shrink-0 rounded-lg px-5 py-2.5 text-sm font-medium no-underline"
-            style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+            style={{ background: 'var(--da-teal)', color: 'var(--da-text-on-teal)' }}
           >
             Check Domains
           </Link>
         </div>
         <div
           className="rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+          style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
         >
           <div>
-            <h3 className="font-bold mb-1" style={{ color: 'var(--doaide-text)' }}>
+            <h3 className="font-bold mb-1" style={{ color: 'var(--da-text)' }}>
               Registering a Trademark?
             </h3>
-            <p className="text-sm" style={{ color: 'var(--doaide-text-secondary)' }}>
+            <p className="text-sm" style={{ color: 'var(--da-text-secondary)' }}>
               Search your name against Indian trademark classes and find the right Nice Classification.
             </p>
           </div>
           <Link
             to="/tools/trademark-search"
             className="shrink-0 rounded-lg px-5 py-2.5 text-sm font-medium no-underline"
-            style={{ background: 'var(--doaide-gold)', color: 'var(--doaide-text-on-gold)' }}
+            style={{ background: 'var(--da-teal)', color: 'var(--da-text-on-teal)' }}
           >
             Search Trademarks
           </Link>
@@ -268,25 +268,25 @@ export default function Home({ user }) {
 
       {/* Testimonials */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--doaide-text)' }}>
-          Trusted by <span style={{ color: 'var(--doaide-gold)' }}>Indian Entrepreneurs</span>
+        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--da-text)' }}>
+          Trusted by <span style={{ color: 'var(--da-teal)' }}>Indian Entrepreneurs</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { name: 'Priya Sharma', role: 'Founder, NovaByte Technologies', location: 'Bengaluru', text: 'I was stuck for weeks trying to find a name for my SaaS startup. BizNameAI gave me 30 options in seconds, and "NovaByte" scored highest on memorability. The domain was available too. Saved me weeks of brainstorming.' },
-            { name: 'Rahul Mehta', role: 'Co-founder, CraftKart', location: 'Mumbai', text: 'The social handle checker is a lifesaver. We almost went with a name that was taken on Instagram and Twitter. BizNameAI flagged it immediately and suggested alternatives. Our D2C brand launched with consistent handles everywhere.' },
+            { name: 'Priya Sharma', role: 'Founder, NovaByte Technologies', location: 'Bengaluru', text: 'I was stuck for weeks trying to find a name for my SaaS startup. DoAide BizName gave me 30 options in seconds, and "NovaByte" scored highest on memorability. The domain was available too. Saved me weeks of brainstorming.' },
+            { name: 'Rahul Mehta', role: 'Co-founder, CraftKart', location: 'Mumbai', text: 'The social handle checker is a lifesaver. We almost went with a name that was taken on Instagram and Twitter. DoAide BizName flagged it immediately and suggested alternatives. Our D2C brand launched with consistent handles everywhere.' },
             { name: 'Ananya Krishnan', role: 'CEO, GreenLeaf Organics', location: 'Kochi', text: 'As a first-time entrepreneur, I had no idea how to evaluate business names. The scoring feature broke it down — memorability, pronounceability, brandability. It made the decision feel scientific, not guesswork.' },
-            { name: 'Vikram Desai', role: 'Director, FinEdge Consulting', location: 'Pune', text: 'We rebranded from a generic name to "FinEdge" using BizNameAI. Client inquiries increased 40% in the first quarter — people actually remember our name now. The .in and .com domains were both available.' },
+            { name: 'Vikram Desai', role: 'Director, FinEdge Consulting', location: 'Pune', text: 'We rebranded from a generic name to "FinEdge" using DoAide BizName. Client inquiries increased 40% in the first quarter — people actually remember our name now. The .in and .com domains were both available.' },
           ].map((t) => (
             <div
               key={t.name}
               className="rounded-xl p-5"
-              style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+              style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
             >
-              <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>"{t.text}"</p>
+              <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--da-text-secondary)' }}>"{t.text}"</p>
               <div>
-                <p className="font-semibold text-sm" style={{ color: 'var(--doaide-text)' }}>{t.name}</p>
-                <p className="text-xs" style={{ color: 'var(--doaide-text-muted)' }}>{t.role} &middot; {t.location}</p>
+                <p className="font-semibold text-sm" style={{ color: 'var(--da-text)' }}>{t.name}</p>
+                <p className="text-xs" style={{ color: 'var(--da-text-muted)' }}>{t.role} &middot; {t.location}</p>
               </div>
             </div>
           ))}
@@ -295,31 +295,31 @@ export default function Home({ user }) {
 
       {/* FAQ */}
       <section className="mb-16 max-w-3xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--doaide-text)' }}>
+        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--da-text)' }}>
           Frequently Asked Questions
         </h2>
         <div className="space-y-3">
           {[
-            { q: 'Is BizNameAI free to use?', a: 'Yes! You get 5 free searches per day with no sign-up required. Each search generates multiple AI-powered name suggestions with domain availability, social handle checks, and name scoring. Upgrade to Pro for unlimited searches starting at ₹299/month.' },
-            { q: 'How does the AI generate business names?', a: 'BizNameAI uses advanced language models trained on millions of business names and branding patterns. You provide a keyword, industry, and style preference, and the AI generates unique names that are phonetically pleasing, culturally appropriate, and scored on memorability and brandability.' },
+            { q: 'Is DoAide BizName free to use?', a: 'Yes! You get 5 free searches per day with no sign-up required. Each search generates multiple AI-powered name suggestions with domain availability, social handle checks, and name scoring. Upgrade to Pro for unlimited searches starting at ₹299/month.' },
+            { q: 'How does the AI generate business names?', a: 'DoAide BizName uses advanced language models trained on millions of business names and branding patterns. You provide a keyword, industry, and style preference, and the AI generates unique names that are phonetically pleasing, culturally appropriate, and scored on memorability and brandability.' },
             { q: 'Can I check domain availability for generated names?', a: 'Absolutely. Every generated name automatically shows domain availability across .com, .in, .io, and .co TLDs. Green means available, red means taken. You can register available domains directly through your preferred registrar.' },
-            { q: 'Does BizNameAI check social media handle availability?', a: 'Yes. Each generated name is checked for handle availability on major social platforms including Instagram, Twitter/X, and Facebook. Consistent handles across platforms strengthen your brand identity.' },
+            { q: 'Does DoAide BizName check social media handle availability?', a: 'Yes. Each generated name is checked for handle availability on major social platforms including Instagram, Twitter/X, and Facebook. Consistent handles across platforms strengthen your brand identity.' },
             { q: 'How is the name score calculated?', a: 'Each name is scored on three dimensions: memorability (how easy it is to recall after hearing once), pronounceability (how easy it is to say correctly), and brandability (length, uniqueness, and visual appeal). The combined score helps you compare candidates objectively.' },
-            { q: 'Can I use BizNameAI for naming businesses in India?', a: 'BizNameAI is built with the Indian market in mind. It generates names that work in both English and Hindi contexts, checks .in domain availability alongside .com, and considers cultural appropriateness. Many Indian entrepreneurs use it for naming startups, D2C brands, and consulting firms.' },
+            { q: 'Can I use DoAide BizName for naming businesses in India?', a: 'DoAide BizName is built with the Indian market in mind. It generates names that work in both English and Hindi contexts, checks .in domain availability alongside .com, and considers cultural appropriateness. Many Indian entrepreneurs use it for naming startups, D2C brands, and consulting firms.' },
           ].map((item, i) => (
             <details
               key={i}
               className="rounded-xl group"
-              style={{ background: 'var(--doaide-surface)', border: '1px solid var(--doaide-border)' }}
+              style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
             >
               <summary
                 className="px-5 py-4 cursor-pointer font-medium text-sm list-none flex items-center justify-between"
-                style={{ color: 'var(--doaide-text)' }}
+                style={{ color: 'var(--da-text)' }}
               >
                 {item.q}
-                <span className="ml-2 transition-transform group-open:rotate-45" style={{ color: 'var(--doaide-gold)' }}>+</span>
+                <span className="ml-2 transition-transform group-open:rotate-45" style={{ color: 'var(--da-teal)' }}>+</span>
               </summary>
-              <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--doaide-text-secondary)' }}>
+              <p className="px-5 pb-4 text-sm leading-relaxed" style={{ color: 'var(--da-text-secondary)' }}>
                 {item.a}
               </p>
             </details>

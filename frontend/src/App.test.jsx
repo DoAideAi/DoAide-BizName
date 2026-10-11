@@ -6,9 +6,9 @@ import App from './App'
 vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('no backend'))))
 
 describe('App', () => {
-  it('renders the navbar with BizNameAI branding', () => {
+  it('renders the navbar with DoAide BizName branding', () => {
     render(<MemoryRouter><App /></MemoryRouter>)
-    expect(screen.getByText('BizNameAI')).toBeInTheDocument()
+    expect(screen.getByText(/DoAide/)).toBeInTheDocument()
   })
 
   it('renders the home page hero', () => {
