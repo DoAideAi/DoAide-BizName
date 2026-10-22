@@ -266,33 +266,6 @@ export default function Home({ user }) {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--da-text)' }}>
-          Trusted by <span style={{ color: 'var(--da-teal)' }}>Indian Entrepreneurs</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            { name: 'Priya Sharma', role: 'Founder, NovaByte Technologies', location: 'Bengaluru', text: 'I was stuck for weeks trying to find a name for my SaaS startup. DoAide BizName gave me 30 options in seconds, and "NovaByte" scored highest on memorability. The domain was available too. Saved me weeks of brainstorming.' },
-            { name: 'Rahul Mehta', role: 'Co-founder, CraftKart', location: 'Mumbai', text: 'The social handle checker is a lifesaver. We almost went with a name that was taken on Instagram and Twitter. DoAide BizName flagged it immediately and suggested alternatives. Our D2C brand launched with consistent handles everywhere.' },
-            { name: 'Ananya Krishnan', role: 'CEO, GreenLeaf Organics', location: 'Kochi', text: 'As a first-time entrepreneur, I had no idea how to evaluate business names. The scoring feature broke it down — memorability, pronounceability, brandability. It made the decision feel scientific, not guesswork.' },
-            { name: 'Vikram Desai', role: 'Director, FinEdge Consulting', location: 'Pune', text: 'We rebranded from a generic name to "FinEdge" using DoAide BizName. Client inquiries increased 40% in the first quarter — people actually remember our name now. The .in and .com domains were both available.' },
-          ].map((t) => (
-            <div
-              key={t.name}
-              className="rounded-xl p-5"
-              style={{ background: 'var(--da-surface)', border: '1px solid var(--da-border)' }}
-            >
-              <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--da-text-secondary)' }}>"{t.text}"</p>
-              <div>
-                <p className="font-semibold text-sm" style={{ color: 'var(--da-text)' }}>{t.name}</p>
-                <p className="text-xs" style={{ color: 'var(--da-text-muted)' }}>{t.role} &middot; {t.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="mb-16 max-w-3xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-8" style={{ color: 'var(--da-text)' }}>

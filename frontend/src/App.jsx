@@ -1,24 +1,36 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import FeedbackWidget from './components/FeedbackWidget'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { getMe, logout } from './lib/api'
 import Home from './pages/Home'
-import IndustryGenerator from './pages/IndustryGenerator'
-import Login from './pages/Login'
-import NameDetail from './pages/NameDetail'
-import Pricing from './pages/Pricing'
-import Saved from './pages/Saved'
-import BlogIndex from './pages/blog/BlogIndex'
-import BlogPost from './pages/blog/BlogPost'
-import ToolsIndex from './pages/tools/ToolsIndex'
-import TaglineGenerator from './pages/tools/TaglineGenerator'
-import BrandNameScorer from './pages/tools/BrandNameScorer'
-import DomainChecker from './pages/tools/DomainChecker'
-import TrademarkClassFinder from './pages/tools/TrademarkClassFinder'
-import TrademarkSearch from './pages/tools/TrademarkSearch'
-import Embed from './pages/Embed'
+
+const IndustryGenerator = lazy(() => import('./pages/IndustryGenerator'))
+const Login = lazy(() => import('./pages/Login'))
+const NameDetail = lazy(() => import('./pages/NameDetail'))
+const Pricing = lazy(() => import('./pages/Pricing'))
+const Saved = lazy(() => import('./pages/Saved'))
+const BlogIndex = lazy(() => import('./pages/blog/BlogIndex'))
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'))
+const ToolsIndex = lazy(() => import('./pages/tools/ToolsIndex'))
+const TaglineGenerator = lazy(() => import('./pages/tools/TaglineGenerator'))
+const BrandNameScorer = lazy(() => import('./pages/tools/BrandNameScorer'))
+const DomainChecker = lazy(() => import('./pages/tools/DomainChecker'))
+const TrademarkClassFinder = lazy(() => import('./pages/tools/TrademarkClassFinder'))
+const TrademarkSearch = lazy(() => import('./pages/tools/TrademarkSearch'))
+const Embed = lazy(() => import('./pages/Embed'))
+
+function RouteFallback() {
+  return (
+    <div className="flex items-center justify-center py-24" role="status" aria-label="Loading page">
+      <div
+        className="h-8 w-8 animate-spin rounded-full border-2"
+        style={{ borderColor: 'var(--da-teal)', borderTopColor: 'transparent' }}
+      />
+    </div>
+  )
+}
 
 export default function App() {
   const [user, setUser] = useState(null)
@@ -43,6 +55,7 @@ export default function App() {
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar user={user} onLogout={handleLogout} />
       <main style={{ flex: 1 }}>
+        <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route path="/" element={<Home user={user} />} />
           <Route path="/pricing" element={<Pricing />} />
@@ -60,6 +73,7 @@ export default function App() {
           <Route path="/industry/:industry" element={<IndustryGenerator user={user} />} />
           <Route path="/embed" element={<Embed />} />
         </Routes>
+        </Suspense>
       </main>
       <Footer />
       <FeedbackWidget />

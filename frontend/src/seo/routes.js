@@ -3,7 +3,7 @@
 // /embed, /login, /saved and /name/:name are deliberately absent: they get the
 // noindex app shell.
 import { ARTICLES } from '../pages/blog/articles'
-import { INDUSTRIES } from '../pages/IndustryGenerator'
+import { INDUSTRIES } from '../pages/industryData'
 
 export const routes = [
   '/',
