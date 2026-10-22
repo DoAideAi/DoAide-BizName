@@ -4,6 +4,26 @@ import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { ARTICLES } from './articles'
 
+const LINK_RE = /\[([^\]]+)\]\(([^)\s]+)\)/g
+
+// Renders [label](href) markdown links inside article text; internal paths use the router.
+function renderInline(text) {
+  const parts = []
+  let last = 0
+  for (const m of text.matchAll(LINK_RE)) {
+    if (m.index > last) parts.push(text.slice(last, m.index))
+    const [, label, href] = m
+    parts.push(
+      href.startsWith('/')
+        ? <Link key={m.index} to={href} style={{ color: 'var(--da-teal)' }}>{label}</Link>
+        : <a key={m.index} href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--da-teal)' }}>{label}</a>
+    )
+    last = m.index + m[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts
+}
+
 export default function BlogPost() {
   const { slug } = useParams()
   const article = ARTICLES.find((a) => a.slug === slug)
@@ -71,11 +91,11 @@ export default function BlogPost() {
               return (
                 <p key={i}>
                   <strong style={{ color: 'var(--da-text)' }}>{para.slice(2, boldEnd)}</strong>
-                  {para.slice(boldEnd + 2)}
+                  {renderInline(para.slice(boldEnd + 2))}
                 </p>
               )
             }
-            return <p key={i}>{para}</p>
+            return <p key={i}>{renderInline(para)}</p>
           })}
         </div>
 

@@ -316,4 +316,96 @@ DoAide BizName combines all of these steps into one workflow — generate, score
       { q: 'What happens if someone opposes my trademark application?', a: 'You will need to file a Counter Statement within 2 months, exchange evidence through affidavits, and possibly attend a hearing before the Registrar. Opposition proceedings typically take 12-24 months and may cost ₹10,000-₹50,000+ depending on complexity.' },
     ],
   },
+  {
+    slug: 'choose-business-name-india-rules-by-entity-type',
+    title: 'How to Choose a Business Name in India: Rules for Proprietorships, LLPs and Pvt Ltd (2026)',
+    date: '2026-10-22',
+    readTime: '7 min read',
+    excerpt: 'Naming rules in India depend on your business structure. Learn what applies to proprietorships, partnerships, LLPs and private limited companies — plus GST trade names, trademarks and domains.',
+    content: `Most naming advice treats every business the same. In India, the rules that apply to your name depend heavily on the legal structure you pick. A sole proprietor running a bakery in Pune and a funded SaaS startup incorporating as a Private Limited Company face very different checks, costs and risks. This guide walks through how to choose a business name in India based on your entity type, and the checks every founder should run before committing.
+
+**First, separate the three "names" your business can have.** Indian businesses often carry up to three names. The legal name is what appears on your PAN, bank account and incorporation or registration documents. The trade name is what you trade under and can be shown on your GST registration if it differs from the legal name. The brand name is what customers see on your packaging, app or signboard, and it is protected through trademark registration rather than company registration. Founders get into trouble when they assume that registering one of these automatically protects the others. It does not. A company name approved by the Ministry of Corporate Affairs (MCA) is not a trademark, and a GST trade name gives you no exclusive rights at all.
+
+**Sole proprietorship: maximum freedom, minimum protection.** A proprietorship is not a separate legal entity, so there is no central name registry and no MCA approval. You can start trading as "Sharma Sweets" or "UrbanLeaf Studio" as soon as you have your registrations in place — typically a GST registration if your turnover crosses the threshold or you sell online, Udyam registration if you want MSME benefits, and a Shop and Establishment licence from your state or municipality. The trade name you enter in these registrations is largely self-declared. The downside is that nothing stops another business elsewhere in India from using the same name. If you plan to grow beyond one shop, file a trademark application early — it is the only way a proprietorship gets nationwide exclusivity over its name.
+
+**Partnership firm: register with the state, but check trademarks too.** A partnership firm under the Indian Partnership Act, 1932 is registered with the Registrar of Firms in your state, and registration is optional but strongly recommended. Some states object to firm names that suggest government patronage or closely resemble an existing firm, but there is no nationwide similarity check. As with proprietorships, a firm name gives limited protection. Check the trademark register before printing letterheads and signboards.
+
+**LLP: MCA naming rules apply.** A Limited Liability Partnership is registered with the MCA, and its name must end with "LLP" or "Limited Liability Partnership". The name goes through a central similarity check, so it cannot be identical or too similar to an existing company or LLP. Names are reserved through the RUN-LLP service on the MCA portal. Because the same similarity rules apply to companies and LLPs, it is worth running the [MCA name availability check](/blog/mca-company-name-availability-check-guide) before you shortlist.
+
+**Private Limited Company and OPC: the strictest rules.** Companies are governed by the Companies Act, 2013 and the Companies (Incorporation) Rules, 2014. The name must end with "Private Limited" (or "(OPC) Private Limited" for a One Person Company). It must not be identical or too similar to an existing company or LLP, must not be undesirable or offensive, and must not use restricted words — for example, words implying government patronage such as "National", "Union" or "Republic", or regulated activities such as "Bank", "Insurance" or "Mutual Fund" — without the relevant approval or regulator NOC. MCA also expects the name to reflect your main objects in a reasonable way, and you explain its significance when you apply. Name reservation for a new company happens through Part A of the SPICe+ web form. For a full walk-through of the filing, see our [MCA company name registration guide](/blog/how-to-register-company-name-india-mca-guide).
+
+**Choosing a name that works in India's languages.** India is not one market. A name that sounds premium in English might mean something awkward in Tamil, Bengali or Marathi. Before you commit, ask native speakers in each of your launch regions to say the name out loud and tell you what it reminds them of. Watch for names that are hard to transliterate: if a customer hears your name on a radio ad or a WhatsApp voice note, can they type it into Google or the app store correctly? Avoid letter combinations that people spell in several ways (for example "ee" versus "i", or "sh" versus "s"). Romanised Hindi and Sanskrit-rooted words can work well, but popular ones like "Shree", "Sai" or "Om" are already heavily used, and MCA largely ignores such prefixes when comparing names, so they will not make a common name distinctive.
+
+**Plan for growth, not just your first product.** "Pune Phone Repairs" is clear today but limiting tomorrow. Place names and narrow product descriptions make it hard to expand to new cities or categories, and descriptive names are also harder to trademark because the Trade Marks Registry tends to object to marks that simply describe the goods or services. Suggestive or coined names — names that hint at a benefit without describing it literally — usually give you more room to grow and stronger legal protection.
+
+**The pre-commitment checklist.** Before finalising a name, run through these checks in order:
+
+**1. Brainstorm widely.** Generate at least 30-50 candidates. Our [AI business name generator](/) and [industry-specific generators](/industry/technology) give you a large starting pool in a few minutes.
+
+**2. Score and shortlist.** Use the [Brand Name Scorer](/tools/brand-name-scorer) to compare length, pronounceability and memorability, and cut to five or six names.
+
+**3. Check the trademark register.** Search IP India's public trademark search for exact and phonetic matches in your classes. Our [Trademark Search Helper](/tools/trademark-search) gives you a quick preliminary screen, and the [Trademark Class Finder](/tools/trademark-class-finder) shows which of the 45 Nice classes you need.
+
+**4. Check the MCA register.** If you are forming an LLP or company, check existing company and LLP names on the MCA portal for identical or similar names.
+
+**5. Check domains and handles.** Use the [Domain Checker](/tools/domain-checker) to see .com and .in availability, then check Instagram, LinkedIn and X handles.
+
+**6. Say it, spell it, sleep on it.** Test the final two or three names with real customers in your target cities before you file anything.
+
+**The bottom line.** Choosing a business name in India is part branding exercise and part legal exercise. Your entity type decides which registry checks your name, but only a trademark protects it across the country. Pick a distinctive, pronounceable name, verify it against MCA and trademark records, and secure the domain on the same day you decide. Start generating options with [DoAide BizName](/) — it is free to try.`,
+    faqs: [
+      { q: 'Do I need to register my business name in India?', a: 'It depends on your structure. Companies and LLPs must reserve their name with the Ministry of Corporate Affairs. Sole proprietorships have no central name registration — the name appears in GST, Udyam or Shop and Establishment registrations. To get exclusive rights to a name for any structure, you need a trademark registration.' },
+      { q: 'Can two businesses in India have the same name?', a: 'Two companies or LLPs cannot have identical or very similar names on the MCA register. Proprietorships and partnership firms can, because there is no nationwide check. However, if one business holds a registered trademark, it can stop others from using a confusingly similar name for related goods or services.' },
+      { q: 'What is the difference between a legal name and a trade name in GST?', a: 'The legal name is the name on your PAN — your own name for a proprietorship, or the registered name for a company or LLP. The trade name is the name you do business under and can be different. A GST trade name does not give you any exclusive rights to that name.' },
+      { q: 'Which words cannot be used in a company name in India?', a: 'Words implying government patronage such as National, Union, Central, Republic or President, and words linked to regulated activities such as Bank, Insurance, Stock Exchange or Mutual Fund, need prior approval or a regulator NOC. Offensive names and names protected under the Emblems and Names (Prevention of Improper Use) Act, 1950 are not allowed.' },
+      { q: 'Should my business name be in Hindi or English?', a: 'Either works if it is easy to pronounce and spell across your target regions. Test the name with native speakers in each launch market, avoid spellings that can be typed several ways, and note that very common prefixes like Shree, Sai or Om do not make a name distinctive for MCA or trademark purposes.' },
+    ],
+  },
+  {
+    slug: 'mca-company-name-availability-check-guide',
+    title: 'MCA Company Name Availability Check: How to Search and Avoid Rejection (2026)',
+    date: '2026-10-22',
+    readTime: '8 min read',
+    excerpt: 'How to check company and LLP name availability on the MCA portal, how the similarity rules under Rule 8 actually work, and how to avoid the most common name rejections.',
+    content: `Most company name rejections at the Ministry of Corporate Affairs (MCA) are avoidable. Founders search for their exact name, see no match, file the application and are surprised when the Central Registration Centre (CRC) rejects it for being "too similar" to a company they never found. This guide explains how to run a proper company name availability check on the MCA portal in 2026, how the similarity rules work, and how to give your application the best chance of approval the first time. For the full incorporation process after name approval, see our [MCA company name registration guide](/blog/how-to-register-company-name-india-mca-guide).
+
+**Where to check name availability.** The MCA portal (mca.gov.in) offers a free name search under its MCA Services section — look for the option to check a company or LLP name. You type in a name and the portal lists existing companies and LLPs whose names match or closely resemble it. The service is free and does not require filing anything, although you may need to be logged in for some services on the current V3 portal. Menu labels on the portal change from time to time, so if you cannot find it, use the search box on mca.gov.in. You can also look up any existing company through the master data view to see its status and registered details.
+
+**Why a "no results" search is not enough.** The search tool matches text, but the CRC examiner applies the legal tests in Rule 8 of the Companies (Incorporation) Rules, 2014. Under those rules, a proposed name is treated as identical to an existing name if the only differences are things like the following:
+
+**Company-type words.** Words such as Private, Pvt, Limited, Ltd, LLP, Company, Co., Corporation, Corp or Inc are ignored when comparing names. "Bluepeak Private Limited" and "Bluepeak LLP" are treated as the same name.
+
+**Plural, tense and case.** Changing singular to plural, changing tense ("Grow" versus "Growing" in some cases), or changing upper and lower case does not create a new name.
+
+**Spacing, punctuation and joining words.** "Blue Peak", "BluePeak" and "Blue-Peak" are treated alike.
+
+**Misspellings and phonetic variations.** Deliberate misspellings that sound the same, such as "Kwik" for "Quick", are disregarded.
+
+**Common prefixes and place names.** Adding words such as "New", "Modern", "Nav", "Shri", "Sri", "Shree", "Om", "Jai", "Sai" or "The", or adding a place name, does not differentiate a name from an existing one.
+
+**Internet suffixes and word order.** Adding ".com", ".in" or similar, or rearranging the same words in a different order, does not make a name unique.
+
+So when you check availability, search for the core distinctive word on its own, its common misspellings, the plural form, and the words in a different order. If any active company or LLP shows up with the same distinctive element, assume the CRC will treat your name as too similar.
+
+**Undesirable and restricted names.** Rule 8A covers names that are not allowed regardless of availability. Examples include names that are offensive, names that include the name of a registered trademark owned by someone else (unless you have their consent), names suggesting a connection with the government, and names that include words reserved for regulated businesses such as Bank, Banking, Insurance, Stock Exchange, Venture Capital, Asset Management or Mutual Fund. These need a no-objection certificate from the relevant regulator, and some words such as Board, Commission, Authority, National, Union, Central or Federal need Central Government approval. Avoid them unless you genuinely need them.
+
+**Check trademarks alongside MCA.** MCA can reject a name that conflicts with a registered trademark, and even if the CRC misses it, the trademark owner can later apply to have your company directed to change its name. Search the IP India public trademark search for your distinctive word in the classes relevant to your business. Our [Trademark Search Helper](/tools/trademark-search) gives a quick preliminary screen, and the [Trademark Class Finder](/tools/trademark-class-finder) helps you identify which classes to search.
+
+**How name reservation works in 2026.** For a new company, the name is reserved through Part A of the SPICe+ web form on the MCA V3 portal. You propose your name, explain its significance, and state the company's main objects. The government fee is ₹1,000. If approved, the name is reserved for 20 days, during which you file Part B to complete incorporation. The standalone RUN (Reserve Unique Name) service is used mainly for changing the name of an existing company, and LLPs use RUN-LLP. If the CRC raises an objection, you typically get one opportunity to resubmit with a corrected name or explanation; after that, you need to file afresh and pay again. Fees and validity periods are revised from time to time, so confirm the current figures on mca.gov.in before filing.
+
+**How to write the significance field.** Do not leave the significance or meaning of the name vague. Explain what each word means, why you chose it, and how it relates to your main business activity. If the name is a coined word, say so and describe its origin — for example, that it combines two words or comes from a Sanskrit root. If your name includes a word that matches your business activity (such as "Foods" or "Technologies"), make sure your stated main objects actually match it. Mismatches between the name and the objects are a common reason for resubmission requests.
+
+**Five common reasons names get rejected.** The proposed name is too similar to an existing company or LLP after applying the Rule 8 tests. The name is too generic — "Global Tech Solutions Private Limited" style names collide with hundreds of existing entities. The name contains a restricted word without the required approval. The name conflicts with a registered trademark. The name does not match the stated objects of the company.
+
+**A practical pre-filing routine.** Start with 20-30 candidates from our [AI business name generator](/) or the [industry generators](/industry/technology). Score them with the [Brand Name Scorer](/tools/brand-name-scorer) and keep five. For each, run the MCA name search on the core word and its variants, then the trademark search, then check .com and .in availability with the [Domain Checker](/tools/domain-checker). File with your strongest name and keep a backup ready in case the CRC asks you to resubmit. If you are still deciding on structure, read [how naming rules differ for proprietorships, LLPs and companies](/blog/choose-business-name-india-rules-by-entity-type).
+
+**The bottom line.** A real MCA company name availability check means searching the way the examiner thinks — stripping out suffixes, prefixes, plurals and punctuation and looking at the distinctive core of your name. Do that, check trademarks, write a clear significance statement, and most founders get their name approved on the first attempt.`,
+    faqs: [
+      { q: 'How do I check company name availability on MCA?', a: 'Use the free company or LLP name search under MCA Services on mca.gov.in. Search for the distinctive word in your proposed name on its own, along with plurals, misspellings and different word orders, because the examiner ignores those differences when deciding whether a name is too similar.' },
+      { q: 'Is the MCA name search free?', a: 'Yes. Checking name availability on the MCA portal is free. You only pay when you apply to reserve the name, which costs ₹1,000 through SPICe+ Part A for a new company or the RUN service for a name change.' },
+      { q: 'How long is a reserved company name valid?', a: 'For a new company, an approved name is reserved for 20 days from approval, within which you must complete incorporation. Validity periods can change, so confirm the current rule on mca.gov.in before filing.' },
+      { q: 'Why was my company name rejected even though the search showed no match?', a: 'The search matches text, but the examiner applies Rule 8 of the Companies (Incorporation) Rules, 2014, which ignores company-type words, plurals, punctuation, spacing, phonetic misspellings, common prefixes like New or Shree, place names and word order. A name that differs from an existing one only in these ways is treated as identical.' },
+      { q: 'Does MCA check trademarks when approving a company name?', a: 'MCA can reject a name that conflicts with a registered trademark, and a trademark owner can also object after incorporation. Always search the IP India trademark database in your relevant classes before applying.' },
+    ],
+  },
 ]
