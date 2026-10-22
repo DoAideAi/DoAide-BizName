@@ -100,7 +100,7 @@ export default function UsernameChecker() {
           </div>
 
           <p className="text-xs mt-4" style={{ color: 'var(--da-text-muted)' }}>
-            GitHub, YouTube and Pinterest are checked live. Instagram, X, LinkedIn and Facebook block
+            GitHub and YouTube are checked live. Pinterest, Instagram, X, LinkedIn and Facebook block
             automated checks — use the profile link to verify in one click. &ldquo;Likely available&rdquo; means the
             profile page does not exist right now; platforms may still reserve or restrict handles.
           </p>

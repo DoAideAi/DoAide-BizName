@@ -30,15 +30,20 @@ PROBED_PLATFORMS = {
         "url": "https://www.youtube.com/@{handle}",
         "pattern": re.compile(r"^[a-z0-9._-]{3,30}$"),
     },
+}
+
+#: Google's consent wall intercepts cookie-less EU requests with a 200 page;
+#: these pre-consent cookies make YouTube answer 404/200 for the handle itself.
+CONSENT_COOKIES = {"SOCS": "CAI", "CONSENT": "YES+cb"}
+
+#: Platforms behind login walls / bot detection (Pinterest serves a 200 page
+#: even for free handles): format check + manual link.
+MANUAL_PLATFORMS = {
     "pinterest": {
         "label": "Pinterest",
         "url": "https://www.pinterest.com/{handle}/",
         "pattern": re.compile(r"^[a-z0-9_]{3,30}$"),
     },
-}
-
-#: Platforms behind login walls / bot detection: format check + manual link.
-MANUAL_PLATFORMS = {
     "instagram": {
         "label": "Instagram",
         "url": "https://www.instagram.com/{handle}/",
@@ -75,6 +80,8 @@ async def _probe(client: httpx.AsyncClient, key: str, cfg: dict, handle: str) ->
         resp = await client.get(url, follow_redirects=True)
     except httpx.HTTPError:
         return {**base, "status": "unknown"}
+    if "consent." in str(resp.url):
+        return {**base, "status": "unknown"}
     if resp.status_code == 404:
         return {**base, "status": "available"}
     if resp.status_code == 200:
@@ -97,7 +104,9 @@ async def check_usernames(name: str) -> dict:
         return {"handle": "", "results": []}
 
     async with httpx.AsyncClient(
-        timeout=CHECK_TIMEOUT, headers={"User-Agent": USER_AGENT}
+        timeout=CHECK_TIMEOUT,
+        headers={"User-Agent": USER_AGENT},
+        cookies=CONSENT_COOKIES,
     ) as client:
         probed = await asyncio.gather(
             *(_probe(client, key, cfg, handle) for key, cfg in PROBED_PLATFORMS.items())

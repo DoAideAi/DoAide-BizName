@@ -13,8 +13,9 @@ def test_normalize_handle_strips_and_lowercases():
 
 
 class FakeResponse:
-    def __init__(self, status_code):
+    def __init__(self, status_code, url="https://example.com/x"):
         self.status_code = status_code
+        self.url = url
 
 
 @pytest.fixture
@@ -26,6 +27,8 @@ def fake_http(monkeypatch):
         result = statuses.get(url, 404)
         if isinstance(result, Exception):
             raise result
+        if isinstance(result, FakeResponse):
+            return result
         return FakeResponse(result)
 
     monkeypatch.setattr(httpx.AsyncClient, "get", fake_get)
@@ -36,7 +39,6 @@ def fake_http(monkeypatch):
 async def test_probed_platforms_map_status_codes(fake_http):
     fake_http["https://github.com/mybrand"] = 200
     fake_http["https://www.youtube.com/@mybrand"] = 404
-    fake_http["https://www.pinterest.com/mybrand/"] = httpx.ConnectTimeout("slow")
 
     data = await check_usernames("MyBrand")
     by_platform = {r["platform"]: r for r in data["results"]}
@@ -44,7 +46,20 @@ async def test_probed_platforms_map_status_codes(fake_http):
     assert data["handle"] == "mybrand"
     assert by_platform["github"]["status"] == "taken"
     assert by_platform["youtube"]["status"] == "available"
-    assert by_platform["pinterest"]["status"] == "unknown"
+
+
+@pytest.mark.asyncio
+async def test_probe_errors_and_consent_walls_are_unknown(fake_http):
+    fake_http["https://github.com/mybrand"] = httpx.ConnectTimeout("slow")
+    fake_http["https://www.youtube.com/@mybrand"] = FakeResponse(
+        200, url="https://consent.youtube.com/m?continue=x"
+    )
+
+    data = await check_usernames("MyBrand")
+    by_platform = {r["platform"]: r for r in data["results"]}
+
+    assert by_platform["github"]["status"] == "unknown"
+    assert by_platform["youtube"]["status"] == "unknown"
 
 
 @pytest.mark.asyncio
@@ -52,7 +67,7 @@ async def test_manual_platforms_get_profile_links(fake_http):
     data = await check_usernames("mybrand")
     by_platform = {r["platform"]: r for r in data["results"]}
 
-    for key in ("instagram", "x", "linkedin", "facebook"):
+    for key in ("pinterest", "instagram", "x", "linkedin", "facebook"):
         assert by_platform[key]["status"] == "manual"
         assert "mybrand" in by_platform[key]["url"]
 
