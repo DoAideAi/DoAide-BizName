@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { ARTICLES } from './articles'
@@ -27,6 +27,16 @@ function renderInline(text) {
 export default function BlogPost() {
   const { slug } = useParams()
   const article = ARTICLES.find((a) => a.slug === slug)
+  const navigate = useNavigate()
+
+  // Keep in-app links in Markdown posts inside the SPA instead of doing a full page load.
+  const onMarkdownClick = (e) => {
+    const a = e.target.closest('a')
+    const href = a?.getAttribute('href')
+    if (!href || !href.startsWith('/') || e.metaKey || e.ctrlKey || e.shiftKey || a.target) return
+    e.preventDefault()
+    navigate(href)
+  }
 
   useEffect(() => {
     if (!article) return
@@ -84,6 +94,9 @@ export default function BlogPost() {
           <span>{article.readTime}</span>
         </div>
         <h1 className="text-3xl font-bold mb-6" style={{ color: 'var(--da-text)' }}>{article.title}</h1>
+        {article.html ? (
+          <div className="md-post" onClick={onMarkdownClick} dangerouslySetInnerHTML={{ __html: article.html }} />
+        ) : (
         <div className="prose max-w-none text-sm leading-relaxed space-y-4" style={{ color: 'var(--da-text-secondary, var(--da-text-muted))' }}>
           {article.content.split('\n\n').map((para, i) => {
             if (para.startsWith('**') && para.indexOf('**', 2) > 0) {
@@ -98,6 +111,7 @@ export default function BlogPost() {
             return <p key={i}>{renderInline(para)}</p>
           })}
         </div>
+        )}
 
         {article.faqs?.length > 0 && (
           <section className="mt-10">

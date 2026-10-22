@@ -1,4 +1,7 @@
-export const ARTICLES = [
+import { MARKDOWN_POSTS } from './markdownPosts'
+
+// Older articles are inline below; new ones are Markdown files in ./posts.
+const INLINE_ARTICLES = [
   {
     slug: 'how-to-choose-perfect-business-name',
     title: 'How to Choose the Perfect Business Name in 2026',
@@ -408,4 +411,17 @@ So when you check availability, search for the core distinctive word on its own,
       { q: 'Does MCA check trademarks when approving a company name?', a: 'MCA can reject a name that conflicts with a registered trademark, and a trademark owner can also object after incorporation. Always search the IP India trademark database in your relevant classes before applying.' },
     ],
   },
+]
+
+export const ARTICLES = [
+  ...MARKDOWN_POSTS.map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date,
+    readTime: p.readTime,
+    excerpt: p.description,
+    html: p.html,
+    faqs: p.faq,
+  })),
+  ...INLINE_ARTICLES,
 ]
