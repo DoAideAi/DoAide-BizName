@@ -27,4 +27,4 @@ def test_domain_check_passes_public_tlds(client):
     with patch("app.routers.domain.check_all_domains", new_callable=AsyncMock) as mock:
         mock.return_value = []
         client.post("/api/domain/check", json={"name": "foo"})
-        mock.assert_called_once_with("foo", tlds=[".com", ".in", ".co.in"])
+        mock.assert_called_once_with("foo", tlds=[".com", ".in", ".co.in", ".io", ".co"])

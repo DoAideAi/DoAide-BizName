@@ -30,7 +30,7 @@ export default function DomainChecker() {
     '@type': 'WebApplication',
     name: 'Domain Availability Checker',
     url: 'https://bizname.doaide.com/tools/domain-checker',
-    description: 'Check if .com, .in, and .co.in domains are available for your business name. Free, no sign-up required.',
+    description: 'Check if .com, .in, .co.in, .io, and .co domains are available for your business name. Free, no sign-up required.',
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
@@ -40,7 +40,7 @@ export default function DomainChecker() {
     <PublicLayout title="Free Domain Availability Checker" jsonLd={jsonLd}>
       <h1 className="text-3xl font-bold mb-2" style={{ color: 'var(--da-text)' }}>Domain Availability Checker</h1>
       <p className="mb-6" style={{ color: 'var(--da-text-muted)' }}>
-        Check if .com, .in, and .co.in domains are available for your business name. Free, no login required.
+        Check if .com, .in, .co.in, .io, and .co domains are available for your business name. Free, no login required.
       </p>
 
       <form onSubmit={handleCheck} className="flex gap-3 mb-6">

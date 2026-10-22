@@ -8,7 +8,7 @@ from app.services.domain_checker import check_all_domains
 
 router = APIRouter(prefix="/api/domain", tags=["domain"])
 
-PUBLIC_TLDS = [".com", ".in", ".co.in"]
+PUBLIC_TLDS = [".com", ".in", ".co.in", ".io", ".co"]
 
 
 class DomainCheckRequest(BaseModel):

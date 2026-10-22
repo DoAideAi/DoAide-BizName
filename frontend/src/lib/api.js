@@ -82,6 +82,13 @@ export async function checkDomains(name) {
   })
 }
 
+export async function checkUsernames(name) {
+  return request('/api/social/check', {
+    method: 'POST',
+    body: JSON.stringify({ name }),
+  })
+}
+
 export async function searchTrademark(name, industry = '') {
   return request('/api/trademark/search', {
     method: 'POST',

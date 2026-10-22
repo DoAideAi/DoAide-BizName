@@ -21,6 +21,13 @@ export const INDUSTRIES = {
     keywords: ['style', 'luxe', 'thread', 'stitch', 'urban', 'vogue', 'chic', 'drape', 'bloom', 'weave'],
     styles: ['modern', 'bold', 'classic'],
   },
+  finance: {
+    label: 'Finance & Fintech',
+    icon: '💰',
+    description: 'Generate credible names for fintech startups, NBFCs, investment platforms, accounting firms, and insurance brands.',
+    keywords: ['pay', 'fin', 'wealth', 'capital', 'fund', 'vault', 'ledger', 'credit', 'mint', 'trust'],
+    styles: ['professional', 'modern', 'minimal'],
+  },
   healthcare: {
     label: 'Healthcare & Wellness',
     icon: '🏥',

@@ -4,7 +4,8 @@ import PublicLayout from '../../components/PublicLayout'
 const TOOLS = [
   { slug: 'tagline-generator', title: 'Tagline Generator', description: 'Generate catchy taglines for your brand based on business type and tone.', icon: '✍️' },
   { slug: 'brand-name-scorer', title: 'Brand Name Scorer', description: 'Score any business name on memorability, pronounceability, length, and uniqueness.', icon: '📊' },
-  { slug: 'domain-checker', title: 'Domain Availability Checker', description: 'Check if .com, .in, and .co.in domains are available via real DNS lookup. No login required.', icon: '🌐' },
+  { slug: 'domain-checker', title: 'Domain Availability Checker', description: 'Check if .com, .in, .co.in, .io, and .co domains are available via real DNS lookup. No login required.', icon: '🌐' },
+  { slug: 'username-checker', title: 'Social Username Checker', description: 'Check if your brand name is free on GitHub, YouTube, Pinterest, Instagram, X, LinkedIn, and Facebook.', icon: '📱' },
   { slug: 'trademark-search', title: 'Trademark Search Helper', description: 'Search your business name against Indian trademark classes and estimate filing costs.', icon: '🔍' },
   { slug: 'trademark-class-finder', title: 'Trademark Class Finder', description: 'Find the right Nice Classification class for your trademark in India with fee calculator.', icon: '™️' },
 ]
@@ -14,6 +15,7 @@ const INDUSTRY_GENERATORS = [
   { slug: 'food', label: 'Food', icon: '🍕' },
   { slug: 'fashion', label: 'Fashion', icon: '👗' },
   { slug: 'healthcare', label: 'Healthcare', icon: '🏥' },
+  { slug: 'finance', label: 'Finance', icon: '💰' },
 ]
 
 export default function ToolsIndex() {

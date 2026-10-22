@@ -10,6 +10,7 @@ export const routes = [
   '/pricing',
   '/tools',
   '/tools/domain-checker',
+  '/tools/username-checker',
   '/tools/trademark-search',
   '/tools/trademark-class-finder',
   '/tools/brand-name-scorer',

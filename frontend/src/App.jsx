@@ -17,6 +17,7 @@ const ToolsIndex = lazy(() => import('./pages/tools/ToolsIndex'))
 const TaglineGenerator = lazy(() => import('./pages/tools/TaglineGenerator'))
 const BrandNameScorer = lazy(() => import('./pages/tools/BrandNameScorer'))
 const DomainChecker = lazy(() => import('./pages/tools/DomainChecker'))
+const UsernameChecker = lazy(() => import('./pages/tools/UsernameChecker'))
 const TrademarkClassFinder = lazy(() => import('./pages/tools/TrademarkClassFinder'))
 const TrademarkSearch = lazy(() => import('./pages/tools/TrademarkSearch'))
 const Embed = lazy(() => import('./pages/Embed'))
@@ -68,6 +69,7 @@ export default function App() {
           <Route path="/tools/tagline-generator" element={<TaglineGenerator />} />
           <Route path="/tools/brand-name-scorer" element={<BrandNameScorer />} />
           <Route path="/tools/domain-checker" element={<DomainChecker />} />
+          <Route path="/tools/username-checker" element={<UsernameChecker />} />
           <Route path="/tools/trademark-class-finder" element={<TrademarkClassFinder />} />
           <Route path="/tools/trademark-search" element={<TrademarkSearch />} />
           <Route path="/industry/:industry" element={<IndustryGenerator user={user} />} />

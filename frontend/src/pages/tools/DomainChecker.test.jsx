@@ -15,12 +15,12 @@ describe('DomainChecker', () => {
     expect(screen.getByText('Check Availability')).toBeInTheDocument()
   })
 
-  it('mentions .com, .in, .co.in in description', () => {
+  it('mentions supported TLDs in description', () => {
     render(
       <MemoryRouter>
         <DomainChecker />
       </MemoryRouter>
     )
-    expect(screen.getByText(/\.com, \.in, and \.co\.in/)).toBeInTheDocument()
+    expect(screen.getByText(/\.com, \.in, \.co\.in, \.io, and \.co/)).toBeInTheDocument()
   })
 })
