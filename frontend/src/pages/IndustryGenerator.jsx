@@ -4,7 +4,7 @@ import NameCard from '../components/NameCard'
 import PublicLayout from '../components/PublicLayout'
 import { generateNames, saveName } from '../lib/api'
 
-const INDUSTRIES = {
+export const INDUSTRIES = {
   technology: {
     label: 'Technology',
     icon: '💻',
@@ -88,7 +88,7 @@ export default function IndustryGenerator({ user }) {
   }
 
   return (
-    <PublicLayout title={`${config.label} Name Generator`} jsonLd={jsonLd}>
+    <PublicLayout title={`${config.label} Business Name Generator`} description={config.description} jsonLd={jsonLd}>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <div className="text-4xl mb-3">{config.icon}</div>

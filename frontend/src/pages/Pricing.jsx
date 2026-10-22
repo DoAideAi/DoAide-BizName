@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
 import { getPricing } from '../lib/api'
+import { setPageMeta } from '../lib/seo'
 
 export default function Pricing() {
   const [plans, setPlans] = useState([])
 
   useEffect(() => {
+    setPageMeta({
+      title: 'Pricing | DoAide BizName',
+      description: 'BizName is free for 5 searches a day with domain and trademark checks. Pro is ₹299/month for unlimited searches and saved names.',
+    })
     getPricing().then((data) => setPlans(data.plans)).catch(() => {})
   }, [])
 

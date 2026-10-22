@@ -1,19 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { setPageMeta } from '../lib/seo'
 
 export default function PublicLayout({ title, description, jsonLd, children }) {
-  useEffect(() => {
-    if (title) document.title = `${title} | DoAide BizName`
-    return () => { document.title = 'DoAide | BizName' }
-  }, [title])
+  // Pages without an explicit description fall back to the one in their JSON-LD.
+  const schemaDescription = (Array.isArray(jsonLd) ? jsonLd : [jsonLd]).find((d) => d?.description)?.description
+  const metaDescription = description || schemaDescription
 
   useEffect(() => {
-    if (!description) return
-    let meta = document.querySelector('meta[name="description"]')
-    const original = meta?.getAttribute('content') || ''
-    if (meta) meta.setAttribute('content', description)
-    return () => { if (meta) meta.setAttribute('content', original) }
-  }, [description])
+    setPageMeta({ title: title && `${title} | DoAide BizName`, description: metaDescription })
+  }, [title, metaDescription])
 
   useEffect(() => {
     if (!jsonLd) return

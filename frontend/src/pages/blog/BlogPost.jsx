@@ -55,7 +55,7 @@ export default function BlogPost() {
   }
 
   return (
-    <PublicLayout title={article.title}>
+    <PublicLayout title={article.title} description={article.excerpt}>
       <article className="max-w-3xl mx-auto">
         <Link to="/blog" className="text-xs no-underline mb-6 inline-block" style={{ color: 'var(--da-teal)' }}>&larr; All articles</Link>
         <div className="flex items-center gap-2 text-xs mb-3" style={{ color: 'var(--da-text-muted)' }}>
