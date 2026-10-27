@@ -31,8 +31,8 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-2" style={{ color: 'var(--da-text)' }}>Legal</h4>
             <ul className="list-none p-0 m-0 space-y-1 text-sm">
-              <li><a href="https://doaide.com/privacy" style={{ color: 'var(--da-text-secondary)' }}>Privacy Policy</a></li>
-              <li><a href="https://doaide.com/terms" style={{ color: 'var(--da-text-secondary)' }}>Terms of Service</a></li>
+              <li><a href="/privacy" style={{ color: 'var(--da-text-secondary)' }}>Privacy Policy</a></li>
+              <li><a href="/terms" style={{ color: 'var(--da-text-secondary)' }}>Terms of Service</a></li>
             </ul>
           </div>
         </div>

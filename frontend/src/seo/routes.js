@@ -16,6 +16,8 @@ export const routes = [
   '/tools/brand-name-scorer',
   '/tools/tagline-generator',
   ...Object.keys(INDUSTRIES).map((key) => `/industry/${key}`),
+  '/privacy',
+  '/terms',
   '/blog',
   ...ARTICLES.map((a) => `/blog/${a.slug}`),
 ]

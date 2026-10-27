@@ -20,6 +20,8 @@ const DomainChecker = lazy(() => import('./pages/tools/DomainChecker'))
 const UsernameChecker = lazy(() => import('./pages/tools/UsernameChecker'))
 const TrademarkClassFinder = lazy(() => import('./pages/tools/TrademarkClassFinder'))
 const TrademarkSearch = lazy(() => import('./pages/tools/TrademarkSearch'))
+const Privacy = lazy(() => import('./pages/Privacy'))
+const Terms = lazy(() => import('./pages/Terms'))
 const Embed = lazy(() => import('./pages/Embed'))
 
 function RouteFallback() {
@@ -73,6 +75,8 @@ export default function App() {
           <Route path="/tools/trademark-class-finder" element={<TrademarkClassFinder />} />
           <Route path="/tools/trademark-search" element={<TrademarkSearch />} />
           <Route path="/industry/:industry" element={<IndustryGenerator user={user} />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/embed" element={<Embed />} />
         </Routes>
         </Suspense>
