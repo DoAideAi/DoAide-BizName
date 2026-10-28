@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { NICE_CLASSES, POPULAR_CATEGORIES } from './trademarkClassData'
+import { trackCalculation } from '../../lib/analytics'
 
 function matchClasses(query) {
   if (!query.trim()) return []
@@ -193,6 +194,7 @@ export default function TrademarkClassFinder() {
     } else {
       setActiveCategory(cat)
       setQuery('')
+      trackCalculation('TrademarkClassFinder', { category: cat.label })
     }
   }
 
@@ -200,6 +202,7 @@ export default function TrademarkClassFinder() {
     setQuery(e.target.value)
     if (e.target.value.trim()) {
       setActiveCategory(null)
+      trackCalculation('TrademarkClassFinder', { query: e.target.value.trim() })
     }
   }
 

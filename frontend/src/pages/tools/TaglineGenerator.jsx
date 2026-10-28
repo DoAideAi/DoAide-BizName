@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
+import { trackCalculation } from '../../lib/analytics'
 
 const BUSINESS_TYPES = ['Technology', 'Food & Beverage', 'Fashion', 'Health & Wellness', 'Finance', 'Education', 'Real Estate', 'Marketing', 'Fitness', 'Travel', 'Beauty', 'Entertainment']
 const TONES = ['Professional', 'Playful', 'Bold', 'Inspirational']
@@ -60,7 +61,9 @@ export default function TaglineGenerator() {
 
   function handleGenerate(e) {
     e.preventDefault()
-    setTaglines(generate(type, values, tone))
+    const result = generate(type, values, tone)
+    setTaglines(result)
+    trackCalculation('TaglineGenerator', { type, tone, count: result.length })
   }
 
   function copyTagline(text, idx) {

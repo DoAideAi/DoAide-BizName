@@ -2,6 +2,7 @@ import { useState } from 'react'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { checkDomains } from '../../lib/api'
+import { trackCalculation } from '../../lib/analytics'
 
 export default function DomainChecker() {
   const [name, setName] = useState('')
@@ -18,6 +19,7 @@ export default function DomainChecker() {
     try {
       const data = await checkDomains(clean)
       setResults(data.results)
+      trackCalculation('DomainChecker', { domain: clean })
     } catch (err) {
       setError(err.message || 'Failed to check domains. Please try again.')
     } finally {

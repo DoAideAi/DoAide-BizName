@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { submitFeedback } from '../lib/api'
+import { trackFeedback } from '../lib/analytics'
 
 export default function FeedbackWidget() {
   const [open, setOpen] = useState(false)
@@ -13,6 +14,7 @@ export default function FeedbackWidget() {
     setStatus('sending')
     try {
       await submitFeedback(type, message.trim(), window.location.pathname)
+      trackFeedback('submit', { type })
       setStatus('sent')
       setMessage('')
       setTimeout(() => {
@@ -27,7 +29,7 @@ export default function FeedbackWidget() {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => { setOpen(true); trackFeedback('open') }}
         aria-label="Send feedback"
         className="fixed bottom-4 left-4 z-50 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-colors"
         style={{ background: 'var(--da-teal)' }}

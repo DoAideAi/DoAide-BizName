@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { trackShare } from '../lib/analytics'
 
 export default function ShareButtons({ url, title }) {
   const [copied, setCopied] = useState(false)
@@ -7,6 +8,7 @@ export default function ShareButtons({ url, title }) {
 
   function copyLink() {
     navigator.clipboard.writeText(url || window.location.href).then(() => {
+      trackShare('copy_link', title)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     })
@@ -19,6 +21,7 @@ export default function ShareButtons({ url, title }) {
         href={`https://wa.me/?text=${encodedTitle}%20${encoded}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackShare('whatsapp', title)}
         className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium"
         style={{ background: 'var(--da-teal-bg)', color: 'var(--da-teal)' }}
       >
@@ -29,6 +32,7 @@ export default function ShareButtons({ url, title }) {
         href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encoded}`}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackShare('twitter', title)}
         className="inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium"
         style={{ background: 'var(--da-teal-bg)', color: 'var(--da-teal)' }}
       >

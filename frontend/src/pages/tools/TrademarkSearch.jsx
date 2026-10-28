@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { searchTrademark } from '../../lib/api'
+import { trackCalculation } from '../../lib/analytics'
 
 const INDUSTRIES = ['', 'Technology', 'Food & Beverage', 'Fashion', 'Healthcare', 'Finance', 'Education', 'E-commerce', 'Real Estate']
 
@@ -21,6 +22,7 @@ export default function TrademarkSearch() {
     try {
       const data = await searchTrademark(name.trim(), industry)
       setResults(data)
+      trackCalculation('TrademarkSearch', { classes: data.classes?.length || 0 })
     } catch (err) {
       setError(err.message || 'Search failed. Please try again.')
     } finally {

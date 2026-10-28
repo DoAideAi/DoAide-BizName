@@ -2,6 +2,7 @@ import { useState } from 'react'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
 import { checkUsernames } from '../../lib/api'
+import { trackCalculation } from '../../lib/analytics'
 
 const STATUS_META = {
   available: { label: 'Likely Available', bg: 'rgba(52,211,153,0.15)', color: 'var(--da-success)' },
@@ -26,6 +27,7 @@ export default function UsernameChecker() {
     try {
       const result = await checkUsernames(clean)
       setData(result)
+      trackCalculation('UsernameChecker', { handle: clean })
     } catch (err) {
       setError(err.message || 'Failed to check usernames. Please try again.')
     } finally {

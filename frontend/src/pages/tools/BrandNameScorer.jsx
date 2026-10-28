@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PublicLayout from '../../components/PublicLayout'
 import ShareButtons from '../../components/ShareButtons'
+import { trackCalculation } from '../../lib/analytics'
 
 function scoreName(name) {
   if (!name.trim()) return null
@@ -72,7 +73,9 @@ export default function BrandNameScorer() {
 
   function handleScore(e) {
     e.preventDefault()
-    setResult(scoreName(name))
+    const scored = scoreName(name)
+    setResult(scored)
+    if (scored) trackCalculation('BrandNameScorer', { overall: scored.overall })
   }
 
   const jsonLd = {
